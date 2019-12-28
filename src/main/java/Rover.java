@@ -17,6 +17,7 @@ public class Rover {
     }
 
     public String getPosition() {
-        return format(this.positionX) + format(this.positionY) + this.direction;
+        String result = "" + this.positionX + this.positionY + this.direction;
+        return result;
     }
 }
