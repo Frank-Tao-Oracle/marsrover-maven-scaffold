@@ -14,6 +14,37 @@ public class Rover {
     private int positionY;
     private String direction;
 
+    public Area getArea() {
+        return area;
+    }
+
+    public void setArea(Area area) {
+        this.area = area;
+    }
+
+    public int getPositionX() {
+        return positionX;
+    }
+
+    public void setPositionX(int positionX) {
+        this.positionX = positionX;
+    }
+
+    public int getPositionY() {
+        return positionY;
+    }
+
+    public void setPositionY(int positionY) {
+        this.positionY = positionY;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
 
     public void land(Area area, int positionX, int positionY, String direction) {
         this.area = area;
@@ -50,6 +81,23 @@ public class Rover {
     }
 
     public void turnLeft() {
+        if (this.direction.equals(Rover.EAST)){
+            this.direction = Rover.NORTH;
+            return;
+        } else if (this.direction.equals(Rover.WEST)){
+            this.direction = Rover.SOUTH;
+            return;
+        } else if (this.direction.equals(Rover.SOUTH)){
+            this.direction = Rover.EAST;
+            return;
+        } else if (this.direction.equals(Rover.NORTH)){
+            this.direction = Rover.WEST;
+            return;
+        }
+        return;
+    }
+
+    public void turnRight() {
         if (this.direction.equals(Rover.EAST)){
             this.direction = Rover.SOUTH;
             return;
