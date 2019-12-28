@@ -9,9 +9,8 @@ public class MarsRoverTest {
     private ExpectedException expectedException = ExpectedException.none();
 
 
-
     @Test
-    public void should_land_rover_on_area(){
+    public void should_land_rover_on_area() {
         Area area = new Area(10, 10);
         Rover rover = new Rover();
         rover.land(area, 5, 5, Rover.EAST);
@@ -20,7 +19,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_move_forward_when_direction_to_east(){
+    public void should_move_forward_when_direction_to_east() {
         Area area = new Area(10, 10);
         Rover rover = new Rover();
         rover.land(area, 5, 5, Rover.EAST);
@@ -30,7 +29,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_turn_left(){
+    public void should_turn_left() {
         Area area = new Area(10, 10);
         Rover rover = new Rover();
         rover.land(area, 5, 5, Rover.EAST);
@@ -40,7 +39,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_execute_batch_commands(){
+    public void should_execute_batch_commands() {
         Rover rover = new Rover();
         RecoverController recoverController = new RecoverController(rover);
         String mission = "10,10,5,5,E,M,L,M,R";
@@ -50,7 +49,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_warning_when_land_out_of_area(){
+    public void should_warning_when_land_out_of_area() {
         expectedException.expect(IllegalArgumentException.class);
         expectedException.expectMessage("x=20 is out of area width 10");
         Area area = new Area(10, 10);

@@ -7,7 +7,7 @@ public class RecoverController {
 
 
     public void execute(String mission) {
-        if (mission == null || mission.length() < 5){
+        if (mission == null || mission.length() < 5) {
             return;
         }
 
@@ -18,12 +18,12 @@ public class RecoverController {
         this.rover.setPositionY(Integer.parseInt(step[3]));
         this.rover.setDirection(step[4]);
 
-        for (int i=5; i<step.length;i++){
-            if (step[i]!=null && step[i].equals("M")){
+        for (int i = 5; i < step.length; i++) {
+            if (step[i] != null && step[i].equals("M")) {
                 this.rover.move();
-            } else if (step[i]!=null && step[i].equals("L")){
+            } else if (step[i] != null && step[i].equals("L")) {
                 this.rover.turnLeft();
-            } else if (step[i]!=null && step[i].equals("R")) {
+            } else if (step[i] != null && step[i].equals("R")) {
                 this.rover.turnRight();
             } else {
                 continue;

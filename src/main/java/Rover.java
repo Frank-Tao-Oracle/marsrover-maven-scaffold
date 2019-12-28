@@ -8,7 +8,6 @@ public class Rover {
     public final static String NORTH = "N";
 
 
-
     private Area area;
     private int positionX;
     private int positionY;
@@ -60,20 +59,20 @@ public class Rover {
     }
 
     public void move() {
-        if (this.direction.equals(Rover.EAST)){
-            int newPositionX = this.positionX + 1 > this.area.getMaxX()?this.area.getMaxX():this.positionX + 1;
+        if (this.direction.equals(Rover.EAST)) {
+            int newPositionX = this.positionX + 1 > this.area.getMaxX() ? this.area.getMaxX() : this.positionX + 1;
             this.positionX = newPositionX;
             return;
-        } else if (this.direction.equals(Rover.WEST)){
-            int newPositionX = this.positionX - 1 < 0?0:this.area.getMaxX();
+        } else if (this.direction.equals(Rover.WEST)) {
+            int newPositionX = this.positionX - 1 < 0 ? 0 : this.area.getMaxX();
             this.positionX = newPositionX;
             return;
-        } else if (this.direction.equals(Rover.SOUTH)){
-            int newPositionY = this.positionY - 1 < 0?0:this.positionY-1;
+        } else if (this.direction.equals(Rover.SOUTH)) {
+            int newPositionY = this.positionY - 1 < 0 ? 0 : this.positionY - 1;
             this.positionY = newPositionY;
             return;
-        } else if (this.direction.equals(Rover.NORTH)){
-            int newPositionY = this.positionY + 1 > this.area.getMaxY()?this.area.getMaxY():this.positionY+1;
+        } else if (this.direction.equals(Rover.NORTH)) {
+            int newPositionY = this.positionY + 1 > this.area.getMaxY() ? this.area.getMaxY() : this.positionY + 1;
             this.positionY = newPositionY;
             return;
         }
@@ -81,16 +80,16 @@ public class Rover {
     }
 
     public void turnLeft() {
-        if (this.direction.equals(Rover.EAST)){
+        if (this.direction.equals(Rover.EAST)) {
             this.direction = Rover.NORTH;
             return;
-        } else if (this.direction.equals(Rover.WEST)){
+        } else if (this.direction.equals(Rover.WEST)) {
             this.direction = Rover.SOUTH;
             return;
-        } else if (this.direction.equals(Rover.SOUTH)){
+        } else if (this.direction.equals(Rover.SOUTH)) {
             this.direction = Rover.EAST;
             return;
-        } else if (this.direction.equals(Rover.NORTH)){
+        } else if (this.direction.equals(Rover.NORTH)) {
             this.direction = Rover.WEST;
             return;
         }
@@ -98,16 +97,16 @@ public class Rover {
     }
 
     public void turnRight() {
-        if (this.direction.equals(Rover.EAST)){
+        if (this.direction.equals(Rover.EAST)) {
             this.direction = Rover.SOUTH;
             return;
-        } else if (this.direction.equals(Rover.WEST)){
+        } else if (this.direction.equals(Rover.WEST)) {
             this.direction = Rover.NORTH;
             return;
-        } else if (this.direction.equals(Rover.SOUTH)){
+        } else if (this.direction.equals(Rover.SOUTH)) {
             this.direction = Rover.WEST;
             return;
-        } else if (this.direction.equals(Rover.NORTH)){
+        } else if (this.direction.equals(Rover.NORTH)) {
             this.direction = Rover.EAST;
             return;
         }
