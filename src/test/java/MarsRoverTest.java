@@ -21,6 +21,15 @@ public class MarsRoverTest {
         rover.move();
         String position = rover.getPosition();
         assertThat(position).isEqualTo("65E");
+    }
 
+    @Test
+    public void should_turn_left(){
+        Area area = new Area(10, 10);
+        Rover rover = new Rover();
+        rover.land(area, 5, 5, Rover.EAST);
+        rover.turnLeft();
+        String position = rover.getPosition();
+        assertThat(position).isEqualTo("55S");
     }
 }
